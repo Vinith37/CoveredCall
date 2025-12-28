@@ -22,5 +22,11 @@ EXPOSE 8000
 # CMD uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}
 # CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
 # CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
-CMD ["sh", "-c", "echo START_COMMAND=uvicorn app.main:app --host 0.0.0.0 --port $PORT && env && sleep 60"]
+RUN chmod +x /app/start.sh
+
+# CMD ["sh", "-c", "echo START_COMMAND=uvicorn app.main:app --host 0.0.0.0 --port $PORT && env && sleep 60"]
+CMD ["sh", "/app/start.sh"]
+
+
+
 
