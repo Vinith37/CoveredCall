@@ -12,14 +12,14 @@ from .config import settings
 from .database import init_db
 from .routers import payoff, strategies
 
-# --------------------
-import os
-from uvicorn import run
-from app.main import app   # adjust if path different
-if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8000))
-    run(app, host="0.0.0.0", port=port)
-# ---------------------
+# # --------------------
+# import os
+# from uvicorn import run
+# from app.main import app   # adjust if path different
+# if __name__ == "__main__":
+#     port = int(os.getenv("PORT", 8000))
+#     run(app, host="0.0.0.0", port=port)
+# # ---------------------
 
 # Configure logging
 logging.basicConfig(
