@@ -14,7 +14,11 @@ from .routers import payoff, strategies
 
 # --------------------
 import os
-port = int(os.getenv("PORT", 8000))
+from uvicorn import run
+from app.main import app   # adjust if path different
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8000))
+    run(app, host="0.0.0.0", port=port)
 # ---------------------
 
 # Configure logging
