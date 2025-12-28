@@ -12,6 +12,11 @@ from .config import settings
 from .database import init_db
 from .routers import payoff, strategies
 
+# --------------------
+import os
+port = int(os.getenv("PORT", 8000))
+# ---------------------
+
 # Configure logging
 logging.basicConfig(
     level=logging.DEBUG if settings.debug else logging.INFO,
