@@ -29,7 +29,7 @@ async function checkBackendAvailability(): Promise<boolean> {
   }
 
   try {
-    const response = await fetch(`${getApiBaseUrl()}/health`, {
+    const response = await fetch(`${getApiBaseUrl()}/api/health`, {
       method: 'GET',
       signal: AbortSignal.timeout(2000), // 2 second timeout
     });
