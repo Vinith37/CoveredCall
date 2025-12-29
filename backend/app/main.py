@@ -60,8 +60,9 @@ app = FastAPI(
 
 # Configure CORS
 origins = [
+    "https://optionsstrategies.in",
+    "https://www.optionsstrategies.in",
     "http://localhost:5173",
-    "https://strategy1-beta.vercel.app",   # your Vercel site
 ]
 
 app.add_middleware(
