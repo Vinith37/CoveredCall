@@ -11,7 +11,7 @@ import {
 
 // Backend API configuration
 // API base URL loaded from environment variable (no hard-coded localhost)
-const DEFAULT_API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
+const DEFAULT_API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 function getApiBaseUrl(): string {
   // Use environment variable for API URL
@@ -336,7 +336,7 @@ export async function deleteStrategy(id: string): Promise<void> {
  */
 export async function checkBackendHealth(): Promise<boolean> {
   try {
-    const response = await fetch(`${getApiBaseUrl()}/health`, {
+    const response = await fetch(`${getApiBaseUrl()}/api/health`, {
       method: 'GET',
     });
 
