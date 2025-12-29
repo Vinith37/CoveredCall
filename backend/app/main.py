@@ -59,9 +59,14 @@ app = FastAPI(
 )
 
 # Configure CORS
+origins = [
+    "http://localhost:5173",
+    "https://strategy1-beta.vercel.app",   # your Vercel site
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.cors_origins_list,  # Multiple origins from environment
+    allow_origins=origins,  # Multiple origins from environment
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods
     allow_headers=["*"],  # Allow all headers
